@@ -17,9 +17,9 @@ CREATE TABLE DimProduct (
         Producttype VARCHAR(255) NOT NULL
     );
 
-CREATE TABLE MyDimCustomerSegment (
-    segmentid INT PRIMARY KEY,
-    segmentname VARCHAR(255)
+CREATE TABLE DimCustomerSegment (
+    Segmentid INT PRIMARY KEY,
+    City VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE MyFactSales (
