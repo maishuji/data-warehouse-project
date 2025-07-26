@@ -1,11 +1,15 @@
-CREATE TABLE MyDimDate (
-    dateid INT PRIMARY KEY,
-    year INT,
-    month INT,
-    monthname VARCHAR(20),
-    day INT,
-    weekday INT,
-    weekdayname VARCHAR(20)
+
+CREATE TABLE DimDate (
+    Dateid INT PRIMARY KEY,
+    date DATE NOT NULL,
+    Year INT NOT NULL,
+    Quarter INT NOT NULL,
+    QuarterName VARCHAR(2) NOT NULL,
+    Month INT NOT NULL,
+    Monthname VARCHAR(255) NOT NULL,
+    Day INT NOT NULL,
+    Weekday INT NOT NULL,
+    WeekdayName VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE MyDimProduct (
