@@ -12,10 +12,10 @@ CREATE TABLE DimDate (
     WeekdayName VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE MyDimProduct (
-    productid INT PRIMARY KEY,
-    productname VARCHAR(255)
-);
+CREATE TABLE DimProduct (
+        Productid INT PRIMARY KEY,
+        Producttype VARCHAR(255) NOT NULL
+    );
 
 CREATE TABLE MyDimCustomerSegment (
     segmentid INT PRIMARY KEY,
