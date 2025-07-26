@@ -10,3 +10,78 @@ You are a data engineer hired by a consumer electronics retail company. The comp
 - Total sales revenue per year per product category
 - Total sales revenue per product category per city
 - Total sales revenue per product category per store
+
+
+## Objective
+
+- Develop dimension and fact tables to organize and structure data effectively for analysis
+- Employ SQL queries to create and load data into dimension and fact tables
+- Create materialized views to optimize query performance
+
+## Design a Data Warehouse
+
+### MyDimDate
+
+dateid
+year
+month
+monthname
+day
+weekday
+weekdayname
+
+```sql
+CREATE TABLE MyDimDate (
+    dateid INT PRIMARY KEY,
+    year INT,
+    month INT,
+    monthname VARCHAR(20),
+    day INT,
+    weekday INT,
+    weekdayname VARCHAR(20)
+);
+```
+
+### MyDimProduct
+
+productid
+productname
+
+```sql
+CREATE TABLE MyDimProduct (
+    productid INT PRIMARY KEY,
+    productname VARCHAR(255)
+);
+```
+
+### MyDimCustomerSegment
+
+segmentid
+segmentname
+
+```sql
+CREATE TABLE MyDimCustomerSegment (
+    segmentid INT PRIMARY KEY,
+    segmentname VARCHAR(255)
+);
+```
+
+### MyFactSales
+
+salesid
+productid
+quantitysold
+priceunit
+segmentid
+dateid
+
+```sql
+CREATE TABLE MyFactSales (
+    salesid INT PRIMARY KEY,
+    productid INT,
+    quantitysold INT,
+    priceperunit DECIMAL (10, 2),
+    segmentid INT,
+    dateid INT
+);
+```
