@@ -22,11 +22,14 @@ CREATE TABLE DimCustomerSegment (
     City VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE MyFactSales (
-    salesid INT PRIMARY KEY,
-    productid INT,
-    quantitysold INT,
-    priceperunit DECIMAL (10, 2),
-    segmentid INT,
-    dateid INT
+CREATE TABLE FactSales (
+    Salesid VARCHAR(255) PRIMARY KEY,
+    Dateid INT NOT NULL,
+    Productid INT NOT NULL,
+    Segmentid INT NOT NULL,
+    Price_PerUnit DECIMAL(10, 2) NOT NULL,
+    QuantitySold INT NOT NULL,
+    FOREIGN KEY (Dateid) REFERENCES DimDate(Dateid),
+    FOREIGN KEY (Productid) REFERENCES DimProduct(Productid),
+    FOREIGN KEY (Segmentid) REFERENCES DimCustomerSegment(Segmentid)
 );
